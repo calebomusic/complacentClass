@@ -63,107 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var generateGraph = __webpack_require__(3);
-var generateNumGuessWidget = __webpack_require__(4);
-var generateBars = __webpack_require__(2);
-
-document.addEventListener('DOMContentLoaded', function () {
-  var incarcerationOverTime = [{ year: 1925, population: 91.669 }, { year: 1930, population: 129.453 }, { year: 1935, population: 144.180 }, { year: 1940, population: 173.706 }, { year: 1945, population: 133.649 }, { year: 1950, population: 166.123 }, { year: 1955, population: 185.780 }, { year: 1960, population: 212.953 }, { year: 1965, population: 210.895 }, { year: 1970, population: 196.429 }, { year: 1975, population: 240.593 }, { year: 1980, population: 329.821 }, { year: 1985, population: 502.507 }, { year: 1990, population: 771.243 }, { year: 1995, population: 1125.874 }, { year: 2000, population: 1381.892 }, { year: 2005, population: 1462.866 }, { year: 2010, population: 1552.669 }, { year: 2015, population: 1476.847 }];
-
-  var incarcerationOverTimeOptions = {
-    xAxisText: 'Year',
-    yAxisText: 'Population in Thousands',
-    yMin: 0,
-    yMax: 1500,
-    xKey: 'year',
-    yKey: 'population',
-    xMin: 1925,
-    xMax: 2015,
-    xAxisLabelFormat: 'd',
-    yAxisLabelFormat: '',
-    xTicks: 10,
-    yTicks: 5,
-    width: 600,
-    data: incarcerationOverTime
-  };
-
-  generateGraph('incarcerationOverTime', incarcerationOverTimeOptions);
-
-  var internationalIncarceration = [{ country: "United States", rate: 670 }, { country: "Russia", rate: 439 }, { country: "Canada", rate: 114 }, { country: "Germany", rate: 76 }];
-
-  var internationalIncarcerationOptions = {
-    xAxisText: 'Country',
-    yAxisText: 'Incarceration rate per 100,000',
-    yMin: 0,
-    yMax: 800,
-    xKey: 'country',
-    yKey: 'rate',
-    xAxisLabelFormat: '',
-    yAxisLabelFormat: '',
-    xTicks: 10,
-    yTicks: 5,
-    width: 400,
-    height: 400,
-    data: internationalIncarceration
-  };
-  generateBars('internationalIncarceration', internationalIncarcerationOptions);
-
-  var raceAndEthnicity = [{ group: 'White', rate: 312 }, { group: 'Black', rate: 1745 }, { group: 'Hispanic', rate: 820 }];
-
-  var raceAndEthnicityOptions = {
-    yAxisText: 'Incarceration Rate per 100,000',
-    yMin: 0,
-    yMax: 2000,
-    xKey: 'group',
-    yKey: 'rate',
-    xAxisLabelFormat: '',
-    yAxisLabelFormat: '',
-    xTicks: 10,
-    yTicks: 5,
-    width: 400,
-    height: 400,
-    data: raceAndEthnicity
-  };
-
-  generateBars('raceAndEthnicity', raceAndEthnicityOptions);
-
-  var native = [{ year: 1980, incarcerated: 0.014 }, { year: 1990, incarcerated: .022 }, { year: 2000, incarcerated: .035 }, { year: 2010, incarcerated: .033 }];
-
-  var nonNative = [{ year: 1980, incarcerated: .004 }, { year: 1990, incarcerated: .011 }, { year: 2000, incarcerated: .007 }, { year: 2010, incarcerated: .016 }];
-
-  var nativeAndNonNativeOptions = {
-    xAxisText: 'Year',
-    yAxisText: 'Incarceration Rate',
-    yMin: 0,
-    yMax: 0.04,
-    xKey: 'year',
-    yKey: 'incarcerated',
-    xMin: 1980,
-    xMax: 2010,
-    xAxisLabelFormat: 'd',
-    yAxisLabelFormat: '.0%',
-    xTicks: 5,
-    yTicks: 5,
-    width: 600,
-    data: nonNative,
-    otherData: [native]
-  };
-
-  generateGraph('nativeAndNonNative', nativeAndNonNativeOptions);
-});
-
-/***/ }),
-/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17252,10 +17156,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(6)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4), __webpack_require__(5)(module)))
 
 /***/ }),
-/* 2 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17263,7 +17167,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _lodash = __webpack_require__(1);
+var _lodash = __webpack_require__(0);
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -17275,6 +17179,7 @@ function generateBars(graphId, options) {
     yKey: 'yScale',
     xTicks: 8,
     yTicks: 8,
+    yFix: 0,
     xMin: 0,
     xMax: Math.max.apply(options['data'].map(function (d) {
       return d[options['xKey']];
@@ -17302,7 +17207,7 @@ function generateBars(graphId, options) {
   var _Object$keys$sort$map = Object.keys(options).sort().map(function (k) {
     return options[k];
   }),
-      _Object$keys$sort$map2 = _slicedToArray(_Object$keys$sort$map, 20),
+      _Object$keys$sort$map2 = _slicedToArray(_Object$keys$sort$map, 21),
       barWidth = _Object$keys$sort$map2[0],
       data = _Object$keys$sort$map2[1],
       guessDist = _Object$keys$sort$map2[2],
@@ -17319,10 +17224,11 @@ function generateBars(graphId, options) {
       xTicks = _Object$keys$sort$map2[13],
       yAxisLabelFormat = _Object$keys$sort$map2[14],
       yAxisText = _Object$keys$sort$map2[15],
-      yKey = _Object$keys$sort$map2[16],
-      yMax = _Object$keys$sort$map2[17],
-      yMin = _Object$keys$sort$map2[18],
-      yTicks = _Object$keys$sort$map2[19];
+      yFix = _Object$keys$sort$map2[16],
+      yKey = _Object$keys$sort$map2[17],
+      yMax = _Object$keys$sort$map2[18],
+      yMin = _Object$keys$sort$map2[19],
+      yTicks = _Object$keys$sort$map2[20];
 
   var guessData = data.map(function (d) {
     var _ref;
@@ -17406,7 +17312,7 @@ function generateBars(graphId, options) {
     var textNode = d3.select(text._groups[0][xVal]);
 
     if (yVal > Math.floor(yMax / 20)) {
-      textNode._groups[0][0] && (textNode._groups[0][0].textContent = Math.floor(yVal));
+      textNode._groups[0][0] && (textNode._groups[0][0].textContent = yVal.toFixed(yFix));
       textNode.attr("y", y + 20);
     } else {
       textNode._groups[0][0] && (textNode._groups[0][0].textContent = '');
@@ -17508,7 +17414,7 @@ function generateBars(graphId, options) {
 module.exports = generateBars;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17516,7 +17422,7 @@ module.exports = generateBars;
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 
-var _lodash = __webpack_require__(1);
+var _lodash = __webpack_require__(0);
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -17635,7 +17541,7 @@ function generateGraph(graphId, options) {
     });
   }
 
-  var guessXDist = (guessData[1][xKey] - guessData[0][xKey]) / 2;
+  var guessXDist = Math.abs((guessData[1][xKey] - guessData[0][xKey]) / 2);
 
   var body = d3.select('#svg-' + graphId);
   var drag = d3.drag().on("drag", dragHandler);
@@ -17659,7 +17565,7 @@ function generateGraph(graphId, options) {
       if (Math.abs(d[xKey] - xVal) < guessXDist) {
         d[yKey] = yVal;
         d.defined = true;
-        // Don't define up to first defined point. 
+        // Don't define up to first defined point.
         // } else if(d[xKey] < xVal && !.defined){
         //   d[yKey] = yVal;
         //   d.defined = true;
@@ -17924,7 +17830,7 @@ function generateGraph(graphId, options) {
 module.exports = generateGraph;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18048,7 +17954,7 @@ function generateNumGuessWidget(widgetLocationId, numFormat) {
 module.exports = generateNumGuessWidget;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 var g;
@@ -18075,7 +17981,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -18101,6 +18007,128 @@ module.exports = function(module) {
 	return module;
 };
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var generateGraph = __webpack_require__(2);
+var generateNumGuessWidget = __webpack_require__(3);
+var generateBars = __webpack_require__(1);
+
+document.addEventListener('DOMContentLoaded', function () {
+  var growthRate = [{ period: '1900-1950', rate: 2.06 }, { period: '1950-1973', rate: 2.20 }, { period: '1973-2007', rate: 1.93 }];
+
+  var growthRateOptions = {
+    xAxisText: 'Period',
+    yAxisText: 'Growth Rate',
+    yMin: 0,
+    yMax: 2.50,
+    yFix: 2,
+    xKey: 'period',
+    yKey: 'rate',
+    xAxisLabelFormat: '',
+    yAxisLabelFormat: '',
+    xTicks: 10,
+    yTicks: 5,
+    width: 400,
+    height: 400,
+    data: growthRate
+  };
+
+  generateBars('growthRate', growthRateOptions);
+
+  // NOTE: order of data matters
+
+  var mobilityData = [{ year: 2015, percent: 0.015 }, { year: 2010, percent: 0.016 }, { year: 2005, percent: 0.020 }, { year: 2000, percent: 0.028 }, { year: 1995, percent: 0.025 }, { year: 1990, percent: 0.029 }, { year: 1985, percent: 0.030 }, { year: 1980, percent: 0.028 }, { year: 1975, percent: 0.030 }, { year: 1970, percent: 0.034 }, { year: 1965, percent: 0.033 }, { year: 1960, percent: 0.032 }, { year: 1955, percent: 0.031 }, { year: 1950, percent: 0.035 }].sort(function (a, b) {
+    return a['year'] - b['year'];
+  });
+
+  var mobilityOptions = {
+    xAxisText: '',
+    yAxisText: 'Percent',
+    yMin: 0,
+    yMax: .04,
+    xKey: 'year',
+    yKey: 'percent',
+    xMin: 1950,
+    xMax: 2015,
+    xAxisLabelFormat: 'd',
+    yAxisLabelFormat: '.0%',
+    xTicks: 5,
+    yTicks: 5,
+    width: 600,
+    data: mobilityData
+  };
+
+  generateGraph('mobility', mobilityOptions);
+
+  var segregationData = [{ year: 1964, percent: 0.023 }, { year: 1967, percent: 0.139 }, { year: 1968, percent: 0.234 }, { year: 1970, percent: 0.331 }, { year: 1972, percent: 0.364 }, { year: 1976, percent: 0.376 }, { year: 1980, percent: 0.371 }, { year: 1986, percent: 0.429 }, { year: 1988, percent: 0.435 }, { year: 1991, percent: 0.392 }, { year: 1994, percent: 0.366 }, { year: 1996, percent: 0.347 }, { year: 1998, percent: 0.327 }, { year: 2000, percent: 0.310 }, { year: 2001, percent: 0.302 }, { year: 2006, percent: 0.277 }, { year: 2011, percent: 0.232 }];
+
+  var segregationOptions = {
+    xAxisText: '',
+    yAxisText: 'Percent Black Students in Majority White Schools',
+    yMin: 0,
+    yMax: .50,
+    xKey: 'year',
+    yKey: 'percent',
+    xMin: 1960,
+    xMax: 2011,
+    xAxisLabelFormat: 'd',
+    yAxisLabelFormat: '.0%',
+    xTicks: 10,
+    yTicks: 5,
+    width: 600,
+    data: segregationData
+  };
+
+  generateGraph('segregation', segregationOptions);
+
+  var startupsData = [{ period: "1980s", percent: 12 }, { period: "Today", percent: 8 }];
+
+  var startupsOptions = {
+    xAxisText: 'Period',
+    yAxisText: 'Percent of Startup Firms',
+    yMin: 0,
+    yMax: 15,
+    yFix: 1,
+    xKey: 'period',
+    yKey: 'percent',
+    xAxisLabelFormat: '',
+    yAxisLabelFormat: '',
+    xTicks: 10,
+    yTicks: 5,
+    width: 400,
+    height: 400,
+    data: startupsData
+  };
+
+  generateBars('startups', startupsOptions);
+
+  var tfpData = [{ period: "pre-1973", tfp: 2.1 }, { period: "1973-1995", tfp: 0.4 }, { period: "1995-2007", tfp: 1.4 }];
+
+  var tfpOptions = {
+    xAxisText: 'Period',
+    yAxisText: 'TFP',
+    yMin: 0,
+    yMax: 2.5,
+    yFix: 1,
+    xKey: 'period',
+    yKey: 'tfp',
+    xAxisLabelFormat: '',
+    yAxisLabelFormat: '',
+    xTicks: 10,
+    yTicks: 5,
+    width: 400,
+    height: 400,
+    data: tfpData
+  };
+
+  generateBars('tfp', tfpOptions);
+});
 
 /***/ })
 /******/ ]);
