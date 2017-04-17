@@ -17275,9 +17275,16 @@ function generateBars(graphId, options) {
   function addLabels(g, data, init) {
     var className = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'label-' + graphId;
 
-    var label = init ? '?' : function (d) {
-      return d[yKey];
-    };
+    if (yAxisLabelFormat.match(/%/) && !init) {
+      var label = function label(d) {
+        console.log(d[yKey]);
+        return (d[yKey] * 100).toFixed(yFix) + '%';
+      };
+    } else {
+      var label = init ? '?' : function (d) {
+        return d[yKey];
+      };
+    }
 
     return g.selectAll("." + className).data(data).enter().append("text").attr("class", className).attr("x", function (d) {
       return xScale(d[xKey]) + xScale.bandwidth() / 2;
@@ -17312,7 +17319,11 @@ function generateBars(graphId, options) {
     var textNode = d3.select(text._groups[0][xVal]);
 
     if (yVal > Math.floor(yMax / 20)) {
-      textNode._groups[0][0] && (textNode._groups[0][0].textContent = yVal.toFixed(yFix));
+      if (yAxisLabelFormat.match(/%/)) {
+        textNode._groups[0][0] && (textNode._groups[0][0].textContent = (yVal * 100).toFixed(yFix) + '%');
+      } else {
+        textNode._groups[0][0] && (textNode._groups[0][0].textContent = yVal.toFixed(yFix));
+      }
       textNode.attr("y", y + 20);
     } else {
       textNode._groups[0][0] && (textNode._groups[0][0].textContent = '');
@@ -18020,20 +18031,20 @@ var generateNumGuessWidget = __webpack_require__(3);
 var generateBars = __webpack_require__(1);
 
 document.addEventListener('DOMContentLoaded', function () {
-  var growthRate = [{ period: '1900-1950', rate: 2.06 }, { period: '1950-1973', rate: 2.20 }, { period: '1973-2007', rate: 1.93 }];
+  var growthRate = [{ period: '1900-1950', rate: .0206 }, { period: '1950-1973', rate: .0220 }, { period: '1973-2007', rate: .0193 }];
 
   var growthRateOptions = {
     xAxisText: 'Period',
     yAxisText: 'Growth Rate',
     yMin: 0,
-    yMax: 2.50,
-    yFix: 2,
+    yMax: .0250,
+    yFix: 1,
     xKey: 'period',
     yKey: 'rate',
     xAxisLabelFormat: '',
-    yAxisLabelFormat: '',
+    yAxisLabelFormat: '.0%',
     xTicks: 10,
-    yTicks: 5,
+    yTicks: 2,
     width: 400,
     height: 400,
     data: growthRate
@@ -18108,18 +18119,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   generateGraph('segregation', segregationOptions);
 
-  var startupsData = [{ period: "1980s", percent: 12 }, { period: "Today", percent: 8 }];
+  var startupsData = [{ period: "1980s", percent: .12 }, { period: "Today", percent: .08 }];
 
   var startupsOptions = {
     xAxisText: 'Period',
     yAxisText: 'Percent of Startup Firms',
     yMin: 0,
-    yMax: 15,
+    yMax: .15,
     yFix: 1,
     xKey: 'period',
     yKey: 'percent',
     xAxisLabelFormat: '',
-    yAxisLabelFormat: '',
+    yAxisLabelFormat: '.0%',
     xTicks: 10,
     yTicks: 5,
     width: 400,
