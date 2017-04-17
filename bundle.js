@@ -18049,7 +18049,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var mobilityOptions = {
     xAxisText: '',
-    yAxisText: 'Percent',
+    yAxisText: 'Percent Moved Out-State',
     yMin: 0,
     yMax: .04,
     xKey: 'year',
@@ -18060,17 +18060,38 @@ document.addEventListener('DOMContentLoaded', function () {
     yAxisLabelFormat: '.0%',
     xTicks: 5,
     yTicks: 5,
-    width: 600,
+    width: 400,
     data: mobilityData
   };
 
   generateGraph('mobility', mobilityOptions);
 
+  var tfpData = [{ period: "pre-1973", tfp: 2.1 }, { period: "1973-1995", tfp: 0.4 }, { period: "1995-2007", tfp: 1.4 }];
+
+  var tfpOptions = {
+    xAxisText: 'Period',
+    yAxisText: 'TFP',
+    yMin: 0,
+    yMax: 2.5,
+    yFix: 1,
+    xKey: 'period',
+    yKey: 'tfp',
+    xAxisLabelFormat: '',
+    yAxisLabelFormat: '',
+    xTicks: 10,
+    yTicks: 5,
+    width: 400,
+    height: 400,
+    data: tfpData
+  };
+
+  generateBars('tfp', tfpOptions);
+
   var segregationData = [{ year: 1964, percent: 0.023 }, { year: 1967, percent: 0.139 }, { year: 1968, percent: 0.234 }, { year: 1970, percent: 0.331 }, { year: 1972, percent: 0.364 }, { year: 1976, percent: 0.376 }, { year: 1980, percent: 0.371 }, { year: 1986, percent: 0.429 }, { year: 1988, percent: 0.435 }, { year: 1991, percent: 0.392 }, { year: 1994, percent: 0.366 }, { year: 1996, percent: 0.347 }, { year: 1998, percent: 0.327 }, { year: 2000, percent: 0.310 }, { year: 2001, percent: 0.302 }, { year: 2006, percent: 0.277 }, { year: 2011, percent: 0.232 }];
 
   var segregationOptions = {
     xAxisText: '',
-    yAxisText: 'Percent Black Students in Majority White Schools',
+    yAxisText: 'Percent Black Students',
     yMin: 0,
     yMax: .50,
     xKey: 'year',
@@ -18081,7 +18102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yAxisLabelFormat: '.0%',
     xTicks: 10,
     yTicks: 5,
-    width: 600,
+    width: 400,
     data: segregationData
   };
 
@@ -18107,27 +18128,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   generateBars('startups', startupsOptions);
-
-  var tfpData = [{ period: "pre-1973", tfp: 2.1 }, { period: "1973-1995", tfp: 0.4 }, { period: "1995-2007", tfp: 1.4 }];
-
-  var tfpOptions = {
-    xAxisText: 'Period',
-    yAxisText: 'TFP',
-    yMin: 0,
-    yMax: 2.5,
-    yFix: 1,
-    xKey: 'period',
-    yKey: 'tfp',
-    xAxisLabelFormat: '',
-    yAxisLabelFormat: '',
-    xTicks: 10,
-    yTicks: 5,
-    width: 400,
-    height: 400,
-    data: tfpData
-  };
-
-  generateBars('tfp', tfpOptions);
 });
 
 /***/ })
