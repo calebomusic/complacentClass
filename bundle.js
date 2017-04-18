@@ -18049,7 +18049,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yAxisLabelFormat: '.0%',
     xTicks: 10,
     yTicks: 2,
-    margin: { top: 15, right: 0, bottom: 50, left: 50 },
+    margin: { top: 15, right: 40, bottom: 50, left: 50 },
     width: 400,
     height: 400,
     data: growthRate
@@ -18076,7 +18076,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yAxisLabelFormat: '.0%',
     xTicks: 5,
     yTicks: 5,
-    margin: { top: 15, right: 0, bottom: 50, left: 50 },
+    margin: { top: 15, right: 40, bottom: 50, left: 50 },
     width: 400,
     data: mobilityData
   };
@@ -18094,7 +18094,7 @@ document.addEventListener('DOMContentLoaded', function () {
     xKey: 'period',
     yKey: 'tfp',
     xAxisLabelFormat: '',
-    margin: { top: 15, right: 0, bottom: 50, left: 50 },
+    margin: { top: 15, right: 40, bottom: 50, left: 50 },
     yAxisLabelFormat: '',
     xTicks: 10,
     yTicks: 5,
@@ -18118,7 +18118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     xMax: 2011,
     xAxisLabelFormat: 'd',
     yAxisLabelFormat: '.0%',
-    margin: { top: 15, right: 0, bottom: 50, left: 50 },
+    margin: { top: 15, right: 40, bottom: 50, left: 50 },
     xTicks: 10,
     yTicks: 5,
     width: 400,
@@ -18139,7 +18139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     yKey: 'percent',
     xAxisLabelFormat: '',
     yAxisLabelFormat: '.0%',
-    margin: { top: 15, right: 0, bottom: 50, left: 50 },
+    margin: { top: 15, right: 40, bottom: 50, left: 50 },
     xTicks: 10,
     yTicks: 5,
     width: 400,
@@ -18149,6 +18149,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   generateBars('startups', startupsOptions);
 });
+
+function checkComplete() {
+  var hidden = document.getElementsByClassName('hidden'),
+      hiddenCount = hidden.length;
+
+  if (hidden.length === 1) {
+    var finalAnswer = document.getElementById('final-answer');
+    finalAnswer.classList.remove('hidden');
+  }
+}
+
+window.setInterval(checkComplete, 2000);
 
 /***/ })
 /******/ ]);
