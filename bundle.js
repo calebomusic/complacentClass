@@ -17230,10 +17230,13 @@ function generateBars(graphId, options) {
       yMin = _Object$keys$sort$map2[19],
       yTicks = _Object$keys$sort$map2[20];
 
+  // guessData init to yMin
+
+
   var guessData = data.map(function (d) {
     var _ref;
 
-    return _ref = {}, _defineProperty(_ref, xKey, d[xKey]), _defineProperty(_ref, yKey, Math.floor(yMax / 2)), _ref;
+    return _ref = {}, _defineProperty(_ref, xKey, d[xKey]), _defineProperty(_ref, yKey, yMin), _ref;
   });
 
   var xAxisOrder = {};
@@ -17277,11 +17280,12 @@ function generateBars(graphId, options) {
 
     if (yAxisLabelFormat.match(/%/) && !init) {
       var label = function label(d) {
-        console.log(d[yKey]);
         return (d[yKey] * 100).toFixed(yFix) + '%';
       };
     } else {
-      var label = init ? '?' : function (d) {
+      var label = init ? function (d) {
+        return d >= yMax / 20 ? '?' : '';
+      } : function (d) {
         return d[yKey];
       };
     }
@@ -17318,7 +17322,7 @@ function generateBars(graphId, options) {
 
     var textNode = d3.select(text._groups[0][xVal]);
 
-    if (yVal > Math.floor(yMax / 20)) {
+    if (yVal >= yMax / 20) {
       if (yAxisLabelFormat.match(/%/)) {
         textNode._groups[0][0] && (textNode._groups[0][0].textContent = (yVal * 100).toFixed(yFix) + '%');
       } else {
