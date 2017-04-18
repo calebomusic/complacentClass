@@ -1,6 +1,13 @@
 body {
   font-family: 'Domine', serif;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  max-width: 75%;
+  margin: auto;
+  text-align: center;
 }
 
 a {
@@ -112,7 +119,8 @@ svg {
   cursor: pointer;
   text-align: center;
   padding-top: 5px;
-  width: 200px;
+  /*width: 200px;*/
+  width: 48%;
   opacity: .3;
   margin-top: 10px;
   border-radius: 8px;
@@ -128,7 +136,8 @@ svg {
   cursor: pointer;
   text-align: center;
   padding-top: 5px;
-  width: 200px;
+  /*width: 200px;*/
+  width: 48%;
   margin-top: 10px;
   border-radius: 8px;
 }
@@ -200,4 +209,9 @@ svg {
 
 [class^=opaqueBars] {
   fill-opacity: 0.50;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
 }
